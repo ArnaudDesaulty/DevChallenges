@@ -14,9 +14,9 @@ function ContestResponse(){
         let cpy = choices.slice();
         if(backward){
             cpy.reverse();
-            pos = choices.length - pos;
+            //pos devrait etre inverse
         }
-
+        
         cpy = cpy.slice(pos).map(e => row[e]);
 
         return cpy.indexOf('o') === -1 ? Infinity :  cpy.indexOf('o');
@@ -26,8 +26,10 @@ function ContestResponse(){
     while(choices.length > 1){
         let left =  choices[curIndex-1];
         let right = choices[curIndex];
-
+        // IL FAUT REGLER  LES EGALITES SAC
         if(dist2o(choices, curIndex, true) < dist2o(choices, curIndex, false)){
+            
+            
             best.push(left);
             choices.splice(curIndex-1, 1);
             curIndex--;
