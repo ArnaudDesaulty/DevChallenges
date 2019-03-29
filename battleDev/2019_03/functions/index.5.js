@@ -26,7 +26,7 @@ function ContestResponse(){
     while(choices.length > 1){
         let left =  choices[curIndex-1];
         let right = choices[curIndex];
-
+        // CA MARCHE PAS ! TEST AVEC CA : "oooooooooooooooooooo**X*o*o*o*o*o"
         if(dist2o(choices, curIndex, true) < dist2o(choices, curIndex, false)){
             best.push(left);
             choices.splice(curIndex-1, 1);
